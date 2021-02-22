@@ -25,6 +25,7 @@ S3
 WORKSPACES_GATEWAYS
 ```
 
+# ex1
 ```
 $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY
 ```
@@ -32,6 +33,7 @@ $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY
 [{"ip_prefix":"15.228.72.64/26","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"15.228.97.0/24","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.229.100.0/26","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.229.99.0/24","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.230.54.0/23","region":"sa-east-1","service":"API_GATEWAY"}]
 ```
 
+# ex2
 ```
 $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY -json=false
 ```

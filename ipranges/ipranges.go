@@ -2,7 +2,6 @@ package ipranges
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -28,8 +27,8 @@ type prefixesInfo struct {
 	Service  string `json:"service"`
 }
 
-// ReturnRangeJSON - Return IP(ranges) based on Region and Service
-func ReturnRangeJSON(service, region string) []byte {
+// ReturnRange - Return IP(ranges) based on Region and Service
+func ReturnRange(service, region string) []byte {
 	var awsRanges awsRangesInfo
 
 	resp, err := http.Get(awsURLRanges)
@@ -59,29 +58,4 @@ func ReturnRangeJSON(service, region string) []byte {
 		log.Fatal(err.Error())
 	}
 	return listPrefixesJSON
-}
-
-// ReturnRange - Return IP(ranges) based on Region and Service
-func ReturnRange(service, region string) {
-	var awsRanges awsRangesInfo
-
-	resp, err := http.Get(awsURLRanges)
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-
-	body, bodyErr := ioutil.ReadAll(resp.Body)
-	if bodyErr != nil {
-		log.Println(bodyErr)
-	}
-
-	// Json to Struct
-	_ = json.Unmarshal(body, &awsRanges)
-
-	// Filter Json by Service and Region
-	for _, v := range awsRanges.Prefixes {
-		if v.Region == region && v.Service == service {
-			fmt.Println(v.Region, v.Service, v.IPPrefix)
-		}
-	}
 }

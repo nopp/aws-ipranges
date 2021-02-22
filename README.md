@@ -2,7 +2,29 @@
 
 By default all results are in json format.
 
-# Ex1
+# Services
+```
+AMAZON
+AMAZON_APPFLOW
+AMAZON_CONNECT
+API_GATEWAY
+CHIME_MEETINGS
+CHIME_VOICECONNECTOR
+CLOUD9
+CLOUDFRONT
+CODEBUILD
+DYNAMODB
+EC2
+EC2_INSTANCE_CONNECT
+GLOBALACCELERATOR
+KINESIS_VIDEO_STREAMS
+ROUTE53
+ROUTE53_HEALTHCHECKS
+ROUTE53_HEALTHCHECKS_PUBLISHING
+S3
+WORKSPACES_GATEWAYS
+```
+
 ```
 $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY
 ```
@@ -10,7 +32,6 @@ $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY
 [{"ip_prefix":"15.228.72.64/26","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"15.228.97.0/24","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.229.100.0/26","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.229.99.0/24","region":"sa-east-1","service":"API_GATEWAY"},{"ip_prefix":"18.230.54.0/23","region":"sa-east-1","service":"API_GATEWAY"}]
 ```
 
-# Ex2
 ```
 $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY -json=false
 ```

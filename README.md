@@ -25,6 +25,11 @@ S3
 WORKSPACES_GATEWAYS
 ```
 
+# Build
+```
+$ go build .
+```
+
 # ex1
 ```
 $ ./aws-ipranges -region sa-east-1 -service API_GATEWAY

@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"fmt"
 )
 
 const (
@@ -28,7 +29,7 @@ type prefixesInfo struct {
 }
 
 // ReturnRange - Return IP(ranges) based on Region and Service
-func ReturnRange(service, region string) []byte {
+func ReturnRange(service, region string) {
 	var awsRanges awsRangesInfo
 
 	resp, err := http.Get(awsURLRanges)
@@ -57,5 +58,5 @@ func ReturnRange(service, region string) []byte {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	return listPrefixesJSON
+	fmt.Println(string(listPrefixesJSON))
 }

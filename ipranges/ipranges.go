@@ -9,6 +9,7 @@ import (
 )
 
 const (
+	// Json created by AWS "realtime"
 	awsURLRanges = "https://ip-ranges.amazonaws.com/ip-ranges.json"
 )
 
